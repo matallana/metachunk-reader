@@ -1,0 +1,10 @@
+<mat-card *ngIf="image">
+    <mat-card-title>{{ image.filename }}</mat-card-title>
+    <mat-card-content>
+      <p>Size: {{ image.width }}x{{ image.height }}</p>
+      <p>Format: {{ image.format }}</p>
+      <p *ngIf="image.text_chunks.length">Metadata: {{ image.text_chunks }}</p>
+    </mat-card-content>
+    <button mat-button color="accent" routerLink="/">Back to List</button>
+  </mat-card>
+  
