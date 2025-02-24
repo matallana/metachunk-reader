@@ -7,7 +7,8 @@ import { ImageDetailComponent } from './app/features/image-detail/image-detail.c
 
 const routes: Routes = [
   { path: '', component: ImageListComponent },
-  { path: 'image/:id', component: ImageDetailComponent }
+  { path: 'image/:id', loadComponent: () => import('./app/features/image-detail/image-detail.component').then(m => m.ImageDetailComponent) },
+  { path: '**', redirectTo: '' }  // Redirige rutas desconocidas a la lista de imágenes
 ];
 
 bootstrapApplication(AppComponent, {
